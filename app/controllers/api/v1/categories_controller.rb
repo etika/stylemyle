@@ -51,7 +51,7 @@ class Api::V1::CategoriesController < ApplicationController
   private
 
   def set_vertical
-    @vertical = Vertical.find(params[:vertical_id])
+    @vertical ||= Vertical.find(params[:vertical_id])
   end
 
   def category_params
