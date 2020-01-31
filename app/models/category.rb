@@ -4,6 +4,7 @@ class Category < ApplicationRecord
   accepts_nested_attributes_for :courses,allow_destroy: true
   enum status: [ :active, :archived ]
   validates :name, uniqueness: true
+  validates_presence_of :name,:state
   validate :check_verticals
   private
    def check_verticals

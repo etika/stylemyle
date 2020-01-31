@@ -2,6 +2,7 @@ class Vertical < ApplicationRecord
   has_many :categories
   accepts_nested_attributes_for :categories,allow_destroy: true
   validate :check_categories
+  validates_presence_of :name
   validates :name, uniqueness: true
   private
   def check_categories
