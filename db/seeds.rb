@@ -5,3 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+vertical = Vertical.create(name: "Check")
+(0..5).each do |i|
+  category = vertical.categories.create(name: "Category#{i}", state: "active")
+  category.courses.create(name: "Course#{i}", author: "Author#{i}",  state: "active")
+end
